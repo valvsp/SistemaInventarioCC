@@ -12,7 +12,7 @@ public class ConexionLote {
 			
 			try {
 				
-				String query = "INSERT INTO `lote`(`ID_Lote`, `Fecha_Ent`, `Fecha_Venc_Lote`, `Precio_Lote`, `Contenido`, `Proveedor_ID`) VALUES (?,?,?,?,?,?)";
+				String query = "INSERT INTO `lote`(`ID_Lote`, `Fecha_Ent`, `Fecha_Venc_Lote`, `Precio_Lote`, `Contenido`, `Proveedor_ID`, `Perecedero`, `Cantidad`) VALUES (?,?,?,?,?,?,?,?)";
 				
 				PreparedStatement st = c.conectar().prepareStatement(query);
 				
@@ -21,7 +21,9 @@ public class ConexionLote {
 				st.setDate(3, a.getFecha_Venc_Lote());
 				st.setFloat(4, a.getPrecio_Lote());
 				st.setString(5, a.getContenido());
-				st.setInt(6, a.getProveedor_ID());
+				st.setInt(6, a.getRIFProveedor());
+				st.setString(7, a.getPerecedero());
+				st.setInt(8, a.getCantidad());
 				
 				st.executeUpdate();
 				

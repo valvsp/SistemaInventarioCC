@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-
 public class main {
 
 	private JFrame frame;
@@ -65,8 +64,11 @@ public class main {
 		JButton BotonEncargado = new JButton("Ingresar como Encargado");
 		BotonEncargado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				VentanaAdminInven.main(null);
+				
 			}
+			
 		});
 		BotonEncargado.setForeground(new Color(1, 166, 194));
 		BotonEncargado.setFont(new Font("Tahoma", Font.PLAIN, 14));
