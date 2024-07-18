@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 
 
@@ -17,6 +19,8 @@ public class main {
 
 	private JFrame frame;
 	static AdminInven VentanaAdminInven = new AdminInven();
+	static PedirSuministro VentanaPedirSuministro = new PedirSuministro();
+	private final Action action = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -53,10 +57,15 @@ public class main {
 		JLabel lblNewLabel = new JLabel("Administrador de Suministros");
 		lblNewLabel.setFont(new Font("Malgun Gothic", Font.PLAIN, 22));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(140, 38, 323, 61);
+		lblNewLabel.setBounds(136, 25, 323, 61);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton BotonPedir = new JButton("Pedir Suministro");
+		BotonPedir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PedirSuministro.main(null);
+			}
+		});
 		BotonPedir.setForeground(new Color(255, 255, 255));
 		BotonPedir.setBackground(new Color(88, 222, 245));
 		BotonPedir.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -66,7 +75,7 @@ public class main {
 		JButton BotonEncargado = new JButton("Ingresar como Encargado");
 		BotonEncargado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaAdminInven.main(null);
+				AdminInven.main(null);
 			}
 		});
 		BotonEncargado.setForeground(new Color(1, 166, 194));
@@ -74,5 +83,13 @@ public class main {
 		BotonEncargado.setBackground(new Color(177, 239, 250));
 		BotonEncargado.setBounds(188, 253, 226, 61);
 		frame.getContentPane().add(BotonEncargado);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }

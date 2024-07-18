@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class AdminInven {
 
@@ -50,7 +51,7 @@ public class AdminInven {
 		JLabel lblAdministradorDeInventario = new JLabel("Administrador de Inventario");
 		lblAdministradorDeInventario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAdministradorDeInventario.setFont(new Font("Malgun Gothic", Font.PLAIN, 22));
-		lblAdministradorDeInventario.setBounds(131, 37, 323, 61);
+		lblAdministradorDeInventario.setBounds(136, 37, 323, 61);
 		frame.getContentPane().add(lblAdministradorDeInventario);
 		
 		JButton BotonInventario = new JButton("Inventario");
