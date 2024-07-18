@@ -8,6 +8,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class main {
 
@@ -41,7 +43,7 @@ public class main {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 615, 410);
+		frame.setBounds(100, 100, 610, 410);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -51,18 +53,22 @@ public class main {
 		lblNewLabel.setBounds(140, 38, 323, 61);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Pedir Suministro");
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(88, 222, 245));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(188, 160, 226, 61);
-		frame.getContentPane().add(btnNewButton);
+		JButton BotonPedir = new JButton("Pedir Suministro");
+		BotonPedir.setForeground(new Color(255, 255, 255));
+		BotonPedir.setBackground(new Color(88, 222, 245));
+		BotonPedir.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		BotonPedir.setBounds(188, 160, 226, 61);
+		frame.getContentPane().add(BotonPedir);
 		
-		JButton btnIngresarComoEncargado = new JButton("Ingresar como Encargado");
-		btnIngresarComoEncargado.setForeground(new Color(1, 166, 194));
-		btnIngresarComoEncargado.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnIngresarComoEncargado.setBackground(new Color(177, 239, 250));
-		btnIngresarComoEncargado.setBounds(188, 253, 226, 61);
-		frame.getContentPane().add(btnIngresarComoEncargado);
+		JButton BotonEncargado = new JButton("Ingresar como Encargado");
+		BotonEncargado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		BotonEncargado.setForeground(new Color(1, 166, 194));
+		BotonEncargado.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		BotonEncargado.setBackground(new Color(177, 239, 250));
+		BotonEncargado.setBounds(188, 253, 226, 61);
+		frame.getContentPane().add(BotonEncargado);
 	}
 }
