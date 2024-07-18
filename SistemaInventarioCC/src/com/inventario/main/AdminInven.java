@@ -44,7 +44,7 @@ public class AdminInven {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 610, 410);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAdministradorDeInventario = new JLabel("Administrador de Inventario");
