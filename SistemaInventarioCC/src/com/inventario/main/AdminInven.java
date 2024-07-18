@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class adminInventario {
+public class AdminInven {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class adminInventario {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					adminInventario window = new adminInventario();
+					AdminInven window = new AdminInven();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class adminInventario {
 	/**
 	 * Create the application.
 	 */
-	public adminInventario() {
+	public AdminInven() {
 		initialize();
 	}
 
