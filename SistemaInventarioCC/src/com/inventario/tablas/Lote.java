@@ -1,7 +1,6 @@
 package com.inventario.tablas;
 
 import java.sql.Date;
-
 import com.inventario.conexiones.Conexion;
 
 public class Lote {

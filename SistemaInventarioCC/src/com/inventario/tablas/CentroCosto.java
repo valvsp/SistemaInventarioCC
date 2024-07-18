@@ -2,18 +2,19 @@ package com.inventario.tablas;
 
 import com.inventario.conexiones.Conexion;
 
-public class Pedido {
+public class CentroCosto {
 
-	String RIF, Nombre, Email, Tlf, Ubicacion;
+	int ID;
+	String Nombre, Ubicacion, Descripcion;
 	
 	Conexion c = new Conexion();
 
-	public String getRIF() {
-		return RIF;
+	public int getID() {
+		return ID;
 	}
 
-	public void setRIF(String rIF) {
-		RIF = rIF;
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public String getNombre() {
@@ -24,22 +25,6 @@ public class Pedido {
 		Nombre = nombre;
 	}
 
-	public String getEmail() {
-		return Email;
-	}
-
-	public void setEmail(String email) {
-		Email = email;
-	}
-
-	public String getTlf() {
-		return Tlf;
-	}
-
-	public void setTlf(String tlf) {
-		Tlf = tlf;
-	}
-
 	public String getUbicacion() {
 		return Ubicacion;
 	}
@@ -47,7 +32,14 @@ public class Pedido {
 	public void setUbicacion(String ubicacion) {
 		Ubicacion = ubicacion;
 	}
-	
+
+	public String getDescripcion() {
+		return Descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		Descripcion = descripcion;
+	}
 	
 	
 }
