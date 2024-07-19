@@ -13,7 +13,6 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 
 
-
 public class main {
 
 	private JFrame frame;
@@ -76,8 +75,11 @@ public class main {
 		JButton BotonEncargado = new JButton("Ingresar como Encargado");
 		BotonEncargado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AdminInven.main(null);
+				
+				VentanaAdminInven.main(null);
+			
 			}
+			
 		});
 		BotonEncargado.setForeground(new Color(1, 166, 194));
 		BotonEncargado.setFont(new Font("Tahoma", Font.PLAIN, 14));

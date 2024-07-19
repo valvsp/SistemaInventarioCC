@@ -1,53 +1,39 @@
 package com.inventario.tablas;
 
+import java.sql.Date;
 import com.inventario.conexiones.Conexion;
 
 public class Pedido {
-
-	String RIF, Nombre, Email, Tlf, Ubicacion;
+	
+	int ID;
+	Date FechaPedido;
+	int IDCentroCosto;
 	
 	Conexion c = new Conexion();
 
-	public String getRIF() {
-		return RIF;
+	public int getID() {
+		return ID;
 	}
 
-	public void setRIF(String rIF) {
-		RIF = rIF;
+	public void setID(int iD) {
+		ID = iD;
 	}
 
-	public String getNombre() {
-		return Nombre;
+	public Date getFechaPedido() {
+		return FechaPedido;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setFechaPedido(Date fechaPedido) {
+		FechaPedido = fechaPedido;
 	}
 
-	public String getEmail() {
-		return Email;
+	public int getIDCentroCosto() {
+		return IDCentroCosto;
 	}
 
-	public void setEmail(String email) {
-		Email = email;
+	public void setIDCentroCosto(int iDCentroCosto) {
+		IDCentroCosto = iDCentroCosto;
 	}
-
-	public String getTlf() {
-		return Tlf;
-	}
-
-	public void setTlf(String tlf) {
-		Tlf = tlf;
-	}
-
-	public String getUbicacion() {
-		return Ubicacion;
-	}
-
-	public void setUbicacion(String ubicacion) {
-		Ubicacion = ubicacion;
-	}
-	
 	
 	
 }
