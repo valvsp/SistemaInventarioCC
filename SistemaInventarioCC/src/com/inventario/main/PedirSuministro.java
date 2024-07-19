@@ -23,6 +23,8 @@ public class PedirSuministro {
 	private JTextField CantidadSuministroField;
 	private JTextField DepartamentoField;
 	private JTable table;
+	static main main = new main();
+	private JTable TablaCategoria;
 
 	/**
 	 * Launch the application.
@@ -44,6 +46,7 @@ public class PedirSuministro {
 	 * Create the application.
 	 */
 	public PedirSuministro() {
+		//main.CerrarVentana(); para cerrar la ventana anterior
 		initialize();
 	}
 
@@ -113,22 +116,17 @@ public class PedirSuministro {
 		botonOrdenar.setBounds(308, 168, 226, 61);
 		frame.getContentPane().add(botonOrdenar);
 		
-		JRadioButton RadioBotonConsumibles = new JRadioButton("Consumibles");
-		RadioBotonConsumibles.setBounds(6, 103, 103, 20);
-		frame.getContentPane().add(RadioBotonConsumibles);
-		
-		JRadioButton RadioBotonPapeleria = new JRadioButton("Papeleria");
-		RadioBotonPapeleria.setBounds(111, 102, 94, 21);
-		frame.getContentPane().add(RadioBotonPapeleria);
-		
-		JRadioButton RadioBotonElectronicos = new JRadioButton("Electronicos");
-		RadioBotonElectronicos.setBounds(6, 126, 103, 21);
-		frame.getContentPane().add(RadioBotonElectronicos);
-		
 		JLabel lblCategoria = new JLabel("Categoria");
 		lblCategoria.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCategoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCategoria.setBounds(69, 82, 76, 19);
+		lblCategoria.setBounds(80, 82, 76, 19);
 		frame.getContentPane().add(lblCategoria);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(49, 103, 152, 61);
+		frame.getContentPane().add(scrollPane_1);
+		
+		TablaCategoria = new JTable();
+		scrollPane_1.setViewportView(TablaCategoria);
 	}
 }

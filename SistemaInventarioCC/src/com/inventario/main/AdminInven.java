@@ -45,7 +45,7 @@ public class AdminInven {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 610, 410);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAdministradorDeInventario = new JLabel("Administrador de Inventario");
@@ -55,6 +55,11 @@ public class AdminInven {
 		frame.getContentPane().add(lblAdministradorDeInventario);
 		
 		JButton BotonInventario = new JButton("Inventario");
+		BotonInventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inventario.main(null);
+			}
+		});
 		BotonInventario.setForeground(Color.WHITE);
 		BotonInventario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonInventario.setBackground(new Color(88, 222, 245));
@@ -62,6 +67,11 @@ public class AdminInven {
 		frame.getContentPane().add(BotonInventario);
 		
 		JButton BotonVencidos = new JButton("Verificar Vencidos");
+		BotonVencidos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Vencidos.main(null);
+			}
+		});
 		BotonVencidos.setForeground(Color.WHITE);
 		BotonVencidos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonVencidos.setBackground(new Color(88, 222, 245));
@@ -71,6 +81,7 @@ public class AdminInven {
 		JButton BotonLote = new JButton("RegistrarLote");
 		BotonLote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RegistrarLote.main(null);
 			}
 		});
 		BotonLote.setForeground(Color.WHITE);
