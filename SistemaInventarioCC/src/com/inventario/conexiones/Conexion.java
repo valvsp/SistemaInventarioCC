@@ -38,6 +38,7 @@ public class Conexion {
 			conexion = DriverManager.getConnection(URL, Usuario, Password);
 			
 			System.out.println("Conexion cargada");
+			
 		} catch(SQLException e) {
 			
 			e.printStackTrace();
