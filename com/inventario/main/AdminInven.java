@@ -78,7 +78,7 @@ public class AdminInven {
 		BotonVencidos.setBounds(320, 146, 226, 61);
 		frame.getContentPane().add(BotonVencidos);
 		
-		JButton BotonLote = new JButton("RegistrarLote");
+		JButton BotonLote = new JButton("Registrar Lote");
 		BotonLote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RegistrarLote.main(null);
