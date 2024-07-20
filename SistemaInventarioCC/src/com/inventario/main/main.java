@@ -31,6 +31,8 @@ public class main {
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
+					
 				}
 			}
 		});
