@@ -91,6 +91,11 @@ public class AdminInven {
 		frame.getContentPane().add(BotonLote);
 		
 		JButton BotonReporte = new JButton("Crear Reporte");
+		BotonReporte.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reporte.main(null);
+			}
+		});
 		BotonReporte.setForeground(Color.WHITE);
 		BotonReporte.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonReporte.setBackground(new Color(88, 222, 245));
