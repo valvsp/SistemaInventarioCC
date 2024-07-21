@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -110,6 +112,16 @@ public class Proveedor {
 		frame.getContentPane().add(UbiField);
 		
 		JButton btnRegistrarProveedor = new JButton(" Registrar Proveedor");
+		btnRegistrarProveedor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (RifField.equals("") || NombreField.equals("") || EmailField.equals("") || TlfField.equals("") || UbiField.equals("")) {
+					JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+				}else {
+				RegistrarLote.main(null);
+				}
+			}
+		});
 		btnRegistrarProveedor.setForeground(Color.WHITE);
 		btnRegistrarProveedor.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnRegistrarProveedor.setBackground(new Color(88, 222, 245));
