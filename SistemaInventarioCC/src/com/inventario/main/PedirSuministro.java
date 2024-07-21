@@ -7,6 +7,7 @@ import java.awt.Window.Type;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -23,6 +24,8 @@ public class PedirSuministro {
 	private JTextField CantidadSuministroField;
 	private JTextField DepartamentoField;
 	private JTable table;
+	private DefaultTableModel model;
+	private DefaultTableModel modelCategoria;
 	static main main = new main();
 	private JTable TablaCategoria;
 
@@ -70,6 +73,15 @@ public class PedirSuministro {
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		model = new DefaultTableModel();
+		table.setModel(model);
+		
+		model.addColumn("ID");
+		model.addColumn("Nombre");
+		model.addColumn("Lote");
+		model.addColumn("Proveedor");
+		model.addColumn("Unidades");
+		
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel = new JLabel("ID");
@@ -116,17 +128,16 @@ public class PedirSuministro {
 		botonOrdenar.setBounds(308, 168, 226, 61);
 		frame.getContentPane().add(botonOrdenar);
 		
-		JLabel lblCategoria = new JLabel("Categoria");
-		lblCategoria.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCategoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCategoria.setBounds(80, 82, 76, 19);
-		frame.getContentPane().add(lblCategoria);
-		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(49, 103, 152, 61);
+		scrollPane_1.setBounds(43, 96, 152, 61);
 		frame.getContentPane().add(scrollPane_1);
 		
 		TablaCategoria = new JTable();
+		modelCategoria = new DefaultTableModel();
+		TablaCategoria.setModel(modelCategoria);
+		
+		modelCategoria.addColumn("Categoria");
+	
 		scrollPane_1.setViewportView(TablaCategoria);
 	}
 }

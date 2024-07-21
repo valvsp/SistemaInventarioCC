@@ -1,19 +1,23 @@
 package com.inventario.main;
 
-import java.awt.EventQueue;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
 
 public class Inventario {
 
 	private JFrame frame;
 	private JTable table;
-
+	private DefaultTableModel model;
 	/**
 	 * Launch the application.
 	 */
@@ -53,10 +57,23 @@ public class Inventario {
 		frame.getContentPane().add(lblInventario);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(39, 104, 517, 215);
+		scrollPane.setBounds(10, 104, 576, 215);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		model = new DefaultTableModel();
+		table.setModel(model);
+		
+		model.addColumn("ID");
+		model.addColumn("Nombre");
+		model.addColumn("Categoria");
+		model.addColumn("Lote");
+		model.addColumn("Ingreso");
+		model.addColumn("Caducidad");
+		model.addColumn("Descripcion");
+		model.addColumn("Cantidad");
+		model.addColumn("Proveedor");
+		
 		scrollPane.setViewportView(table);
 	}
 }

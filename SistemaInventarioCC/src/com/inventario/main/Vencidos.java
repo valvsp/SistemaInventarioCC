@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -15,6 +16,7 @@ public class Vencidos {
 
 	private JFrame frame;
 	private JTable tableVencidos;
+	private DefaultTableModel model;
 
 	/**
 	 * Launch the application.
@@ -59,6 +61,15 @@ public class Vencidos {
 		frame.getContentPane().add(scrollPane);
 		
 		tableVencidos = new JTable();
+		model = new DefaultTableModel();
+		tableVencidos.setModel(model);
+		
+		model.addColumn("ID");
+		model.addColumn("Nombre");
+		model.addColumn("Lote");
+		model.addColumn("Caducacion");
+		model.addColumn("Dias caducado");
+		
 		scrollPane.setViewportView(tableVencidos);
 		
 		JButton BotonEliminar = new JButton("Eliminar Vencidos");
