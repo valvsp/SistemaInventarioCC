@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
@@ -15,6 +17,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class RegistrarLote {
 
@@ -28,6 +33,7 @@ public class RegistrarLote {
 	private JTable TablaCategoria;
 	private DefaultTableModel modelCategoria;
 	private JTextField IdContenidoField;
+	private String Categoria = "";
 
 	/**
 	 * Launch the application.
@@ -140,11 +146,24 @@ public class RegistrarLote {
 		lblProveedor.setBounds(352, 143, 96, 13);
 		frame.getContentPane().add(lblProveedor);
 		
+		JTextPane DescripcionText = new JTextPane();
+		DescripcionText.setText("...");
+		DescripcionText.setBounds(47, 237, 242, 99);
+		frame.getContentPane().add(DescripcionText);
+		
 		JButton BotonRegistrar = new JButton("Registrar");
+		BotonRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (CantidadField.equals("") || ContenidoField.equals("") || IdLoteField.equals("") || IdContenidoField.equals("") 
+						|| IngresoField.equals("") || CaducidadField.equals("") || ProveedorField.equals("")) {
+					JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
 		BotonRegistrar.setForeground(Color.WHITE);
 		BotonRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonRegistrar.setBackground(new Color(88, 222, 245));
-		BotonRegistrar.setBounds(185, 217, 226, 61);
+		BotonRegistrar.setBounds(326, 217, 226, 61);
 		frame.getContentPane().add(BotonRegistrar);
 		
 		JButton BotonDescartar = new JButton("Descartar");
@@ -157,13 +176,14 @@ public class RegistrarLote {
 				IngresoField.setText(null);
 				CaducidadField.setText(null);
 				ProveedorField.setText(null);
+				DescripcionText.setText("...");
 				PerecederoCheck.setSelected(false);
 			}
 		});
 		BotonDescartar.setForeground(new Color(1, 166, 194));
 		BotonDescartar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonDescartar.setBackground(new Color(177, 239, 250));
-		BotonDescartar.setBounds(185, 288, 226, 61);
+		BotonDescartar.setBounds(326, 289, 226, 61);
 		frame.getContentPane().add(BotonDescartar);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -171,13 +191,17 @@ public class RegistrarLote {
 		frame.getContentPane().add(scrollPane_1);
 		
 		TablaCategoria = new JTable();
-		TablaCategoria = new JTable();
+		TablaCategoria.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//obtener la categoria
+			}
+		});
 		modelCategoria = new DefaultTableModel();
 		TablaCategoria.setModel(modelCategoria);
 		
 		modelCategoria.addColumn("Categoria");
 	
-		scrollPane_1.setViewportView(TablaCategoria);
 		scrollPane_1.setViewportView(TablaCategoria);
 		
 		IdContenidoField = new JTextField();
@@ -189,5 +213,13 @@ public class RegistrarLote {
 		lblIdDelContenido.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblIdDelContenido.setBounds(456, 88, 117, 13);
 		frame.getContentPane().add(lblIdDelContenido);
+		
+	
+		
+		JLabel lblNewLabel_2 = new JLabel("Descripcion sobre el contenido");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(55, 217, 220, 13);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
 }

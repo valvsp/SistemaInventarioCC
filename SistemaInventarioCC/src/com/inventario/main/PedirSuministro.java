@@ -11,11 +11,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PedirSuministro {
 
@@ -106,6 +109,13 @@ public class PedirSuministro {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton botonAgregar = new JButton("Agregar");
+		botonAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (IdSuministroField.equals("") || CantidadSuministroField.equals("")) {
+					JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
 		botonAgregar.setForeground(Color.WHITE);
 		botonAgregar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		botonAgregar.setBackground(new Color(88, 222, 245));
@@ -113,6 +123,13 @@ public class PedirSuministro {
 		frame.getContentPane().add(botonAgregar);
 		
 		JButton botonOrdenar = new JButton("Ordenar");
+		botonOrdenar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (IdSuministroField.equals("") || CantidadSuministroField.equals("")) {
+					JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
 		botonOrdenar.setForeground(Color.WHITE);
 		botonOrdenar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		botonOrdenar.setBackground(new Color(80, 163, 254));
