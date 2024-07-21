@@ -6,20 +6,28 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegistrarLote {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField CantidadField;
+	private JTextField ContenidoField;
+	private JTextField IdLoteField;
+	private JTextField IngresoField;
+	private JTextField CaducidadField;
+	private JTextField ProveedorField;
+	private JTable TablaCategoria;
+	private DefaultTableModel modelCategoria;
+	private JTextField IdContenidoField;
 
 	/**
 	 * Launch the application.
@@ -56,57 +64,57 @@ public class RegistrarLote {
 		JLabel lblRegistrarLote = new JLabel("Registrar Lote");
 		lblRegistrarLote.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRegistrarLote.setFont(new Font("Malgun Gothic", Font.PLAIN, 22));
-		lblRegistrarLote.setBounds(136, 28, 323, 61);
+		lblRegistrarLote.setBounds(136, 10, 323, 61);
 		frame.getContentPane().add(lblRegistrarLote);
 		
-		textField = new JTextField();
-		textField.setBounds(136, 109, 96, 19);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		CantidadField = new JTextField();
+		CantidadField.setBounds(194, 109, 80, 19);
+		frame.getContentPane().add(CantidadField);
+		CantidadField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(252, 109, 96, 19);
-		frame.getContentPane().add(textField_1);
+		ContenidoField = new JTextField();
+		ContenidoField.setColumns(10);
+		ContenidoField.setBounds(284, 109, 96, 19);
+		frame.getContentPane().add(ContenidoField);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(363, 109, 75, 19);
-		frame.getContentPane().add(textField_2);
+		IdLoteField = new JTextField();
+		IdLoteField.setColumns(10);
+		IdLoteField.setBounds(390, 109, 58, 19);
+		frame.getContentPane().add(IdLoteField);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(55, 163, 117, 19);
-		frame.getContentPane().add(textField_3);
+		IngresoField = new JTextField();
+		IngresoField.setColumns(10);
+		IngresoField.setBounds(55, 163, 117, 19);
+		frame.getContentPane().add(IngresoField);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(202, 163, 140, 19);
-		frame.getContentPane().add(textField_4);
+		CaducidadField = new JTextField();
+		CaducidadField.setColumns(10);
+		CaducidadField.setBounds(202, 163, 140, 19);
+		frame.getContentPane().add(CaducidadField);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(352, 163, 96, 19);
-		frame.getContentPane().add(textField_5);
+		ProveedorField = new JTextField();
+		ProveedorField.setColumns(10);
+		ProveedorField.setBounds(352, 163, 96, 19);
+		frame.getContentPane().add(ProveedorField);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Perecedero");
-		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		chckbxNewCheckBox.setBounds(456, 162, 96, 21);
-		frame.getContentPane().add(chckbxNewCheckBox);
+		JCheckBox PerecederoCheck = new JCheckBox("Perecedero");
+		PerecederoCheck.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		PerecederoCheck.setBounds(456, 162, 96, 21);
+		frame.getContentPane().add(PerecederoCheck);
 		
 		JLabel lblNewLabel = new JLabel("Cantidad");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(136, 86, 58, 13);
+		lblNewLabel.setBounds(194, 86, 58, 13);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblContenido = new JLabel("Contenido");
 		lblContenido.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblContenido.setBounds(252, 86, 75, 13);
+		lblContenido.setBounds(289, 86, 75, 13);
 		frame.getContentPane().add(lblContenido);
 		
 		JLabel lblId = new JLabel("ID");
 		lblId.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblId.setBounds(363, 86, 58, 13);
+		lblId.setBounds(390, 86, 35, 13);
 		frame.getContentPane().add(lblId);
 		
 		JLabel lblFechaDeIngreso = new JLabel("Fecha de Ingreso");
@@ -127,9 +135,9 @@ public class RegistrarLote {
 		lblNewLabel_1_1.setBounds(202, 150, 87, 13);
 		frame.getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblProveedor = new JLabel("Proveedor");
+		JLabel lblProveedor = new JLabel("RIF Proveedor");
 		lblProveedor.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblProveedor.setBounds(352, 143, 75, 13);
+		lblProveedor.setBounds(352, 143, 96, 13);
 		frame.getContentPane().add(lblProveedor);
 		
 		JButton BotonRegistrar = new JButton("Registrar");
@@ -140,10 +148,46 @@ public class RegistrarLote {
 		frame.getContentPane().add(BotonRegistrar);
 		
 		JButton BotonDescartar = new JButton("Descartar");
+		BotonDescartar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CantidadField.setText(null);
+				ContenidoField.setText(null);
+				IdLoteField.setText(null);
+				IdContenidoField.setText(null);
+				IngresoField.setText(null);
+				CaducidadField.setText(null);
+				ProveedorField.setText(null);
+				PerecederoCheck.setSelected(false);
+			}
+		});
 		BotonDescartar.setForeground(new Color(1, 166, 194));
 		BotonDescartar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		BotonDescartar.setBackground(new Color(177, 239, 250));
 		BotonDescartar.setBounds(185, 288, 226, 61);
 		frame.getContentPane().add(BotonDescartar);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(32, 67, 152, 61);
+		frame.getContentPane().add(scrollPane_1);
+		
+		TablaCategoria = new JTable();
+		TablaCategoria = new JTable();
+		modelCategoria = new DefaultTableModel();
+		TablaCategoria.setModel(modelCategoria);
+		
+		modelCategoria.addColumn("Categoria");
+	
+		scrollPane_1.setViewportView(TablaCategoria);
+		scrollPane_1.setViewportView(TablaCategoria);
+		
+		IdContenidoField = new JTextField();
+		IdContenidoField.setColumns(10);
+		IdContenidoField.setBounds(458, 109, 58, 19);
+		frame.getContentPane().add(IdContenidoField);
+		
+		JLabel lblIdDelContenido = new JLabel("ID del Contenido");
+		lblIdDelContenido.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblIdDelContenido.setBounds(456, 88, 117, 13);
+		frame.getContentPane().add(lblIdDelContenido);
 	}
 }

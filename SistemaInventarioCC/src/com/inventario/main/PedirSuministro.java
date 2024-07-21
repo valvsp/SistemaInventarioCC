@@ -22,12 +22,13 @@ public class PedirSuministro {
 	private JFrame frame;
 	private JTextField IdSuministroField;
 	private JTextField CantidadSuministroField;
-	private JTextField DepartamentoField;
 	private JTable table;
 	private DefaultTableModel model;
 	private DefaultTableModel modelCategoria;
+	private DefaultTableModel modelCentroCosto;
 	static main main = new main();
 	private JTable TablaCategoria;
+	private JTable TablaCentroCosto;
 
 	/**
 	 * Launch the application.
@@ -99,20 +100,10 @@ public class PedirSuministro {
 		frame.getContentPane().add(CantidadSuministroField);
 		CantidadSuministroField.setColumns(10);
 		
-		DepartamentoField = new JTextField();
-		DepartamentoField.setBounds(419, 103, 115, 19);
-		frame.getContentPane().add(DepartamentoField);
-		DepartamentoField.setColumns(10);
-		
 		JLabel lblNewLabel_1 = new JLabel("Cantidad");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(296, 87, 65, 13);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("Departamento");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1_1.setBounds(419, 85, 96, 13);
-		frame.getContentPane().add(lblNewLabel_1_1);
 		
 		JButton botonAgregar = new JButton("Agregar");
 		botonAgregar.setForeground(Color.WHITE);
@@ -139,5 +130,17 @@ public class PedirSuministro {
 		modelCategoria.addColumn("Categoria");
 	
 		scrollPane_1.setViewportView(TablaCategoria);
+		
+		JScrollPane scrollPane_1_1 = new JScrollPane();
+		scrollPane_1_1.setBounds(402, 96, 152, 61);
+		frame.getContentPane().add(scrollPane_1_1);
+		
+		TablaCentroCosto = new JTable();
+		modelCentroCosto = new DefaultTableModel();
+		TablaCentroCosto.setModel(modelCentroCosto);
+		
+		modelCentroCosto.addColumn("Departamentos");
+	
+		scrollPane_1_1.setViewportView(TablaCentroCosto);
 	}
 }

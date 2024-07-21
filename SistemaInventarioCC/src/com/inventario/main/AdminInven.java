@@ -81,7 +81,7 @@ public class AdminInven {
 		JButton BotonLote = new JButton("Registrar Lote");
 		BotonLote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				RegistrarLote.main(null);
+				TipoProveedor.main(null);
 			}
 		});
 		BotonLote.setForeground(Color.WHITE);
