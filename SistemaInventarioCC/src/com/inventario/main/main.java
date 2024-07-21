@@ -78,7 +78,7 @@ public class main {
 		BotonEncargado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				VentanaAdminInven.main(null);
+				AdminInven.main(null);
 			
 			}
 			
